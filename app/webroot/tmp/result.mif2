@@ -30,7 +30,7 @@ Specify Oxs_UZeeman:extfield0 [subst {
   comment {Field values in Tesla; scale to A/m}
   multiplier [expr {1/$MU0}]
   Hrange {
-    {0.008 0 0 0 0 0 1}
+    {2342}
   }
 }]
 
@@ -61,15 +61,3 @@ Specify Oxs_TimeDriver {
   } }
 }
 
-
-##########################################
-# Unused fields:
-Ignore {
-  totalfieldoutputformat: text %f
-}
-
-Destination archive mmArchive                                
-Schedule Oxs_TimeDriver::Magnetization archive Step 100                                
-Schedule Oxs_TimeDriver::Magnetization archive Stage 1                                
-Schedule "Oxs_RungeKuttaEvolve:evolver:Total field" archive Step 100                                
-Schedule "Oxs_RungeKuttaEvolve:evolver:Total field" archive Stage 1

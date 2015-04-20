@@ -21,12 +21,10 @@ class Simulations extends \lithium\data\Model {
     public static function generateOutput($simulation) {
         $hrange = $simulation->hrange;
 
-        $file = './source/source.mif2';
         $newfile = './tmp/result.mif2';
-
-        if (!copy($file, $newfile)) {
-            echo "failed to copy $file...\n";
-        }
+        $mif_file = fopen($newfile, "w") or die("Unable to open file!");
+        Simulations::MIF2_writeModuleText($mif_file, $simulation);
+        fclose($mif_file);
 
         $zip = new ZipArchive();
         $zipname = "/tmp/results" . $simulation->id . ".zip";
@@ -42,6 +40,22 @@ class Simulations extends \lithium\data\Model {
         $zip->close();
 
         return $zipname;
+    }
+
+    public static function MIF2_writeModuleText($file, $simulation) {
+
+        $modules = Mif2::find('all');
+
+        $vars = array(
+            '{$hrange}' => $simulation->hrange,
+            '{$stoppingtime}' => $simulation->stoppingtime,
+        );
+
+        foreach ($modules as $module) {
+
+            $writeText = $module->text;
+            fwrite($file, strtr($writeText . "\n\n", $vars));
+        }
     }
 
 }
