@@ -1,0 +1,5 @@
+<h1>OOMMF Web Interface</h1>
+
+<p>In order to address the needs of NML researchers in generating and submitting simulations to OOMMF quickly and easily, the NML Web Interface is a web based tool that has been developed for defining, generating, and submitting files simulation configuration files to the  OOMMF software package for processing.</p>
+
+<p>This interface is written in PHP on top of the Lithium framework. Lithium provides many features to help reduce the project overhead. Lithium offers a model, view, controller paradigm to PHP development, and executes controller functions based on POST requests to corresponding URLs. This functionality makes it very simple to trigger blocks of code PHP code from the shell environment, which is important for communication between the Web UI and the OOMMF process running on the server. Lithium also provides a much simpler method to working with databases. The framework offers a layer on top of queries, allowing the developer to swap out different DB systems with very little code changes. This will be very helpful if the project ever needs to be moved to MongoDB or another NoSQL type DB system.</p>
