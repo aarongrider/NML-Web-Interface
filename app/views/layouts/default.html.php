@@ -11,7 +11,7 @@
 <head>
 	<?php echo $this->html->charset();?>
 	<title>Application &gt; <?php echo $this->title(); ?></title>
-	<?php echo $this->html->style(array('bootstrap.min', 'lithified')); ?>
+	<?php echo $this->html->style(array('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', 'lithified')); ?>
 	<?php echo $this->scripts(); ?>
 	<?php echo $this->styles(); ?>
 	<?php echo $this->html->link('Icon', null, array('type' => 'icon')); ?>
@@ -40,7 +40,7 @@
 		<hr>
 
 		<div class="footer">
-			<p>&copy; Aaron Grider | Seattle Pacific University | 2015</p>
+			<p>&copy; Department of Engineering and Computer Science | Seattle Pacific University | 2015</p>
 		</div>
 
 	</div>

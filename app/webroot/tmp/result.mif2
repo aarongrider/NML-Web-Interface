@@ -30,7 +30,7 @@ Specify Oxs_UZeeman:extfield0 [subst {
   comment {Field values in Tesla; scale to A/m}
   multiplier [expr {1/$MU0}]
   Hrange {
-    {2342}
+    {0.008 0 0 0 0 0 1}
   }
 }]
 

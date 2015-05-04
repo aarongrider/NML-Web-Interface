@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Mif2;
 use app\models\Simulations;
 
 class SimulationController extends \lithium\action\Controller {
@@ -18,7 +19,7 @@ class SimulationController extends \lithium\action\Controller {
         if ($this->request->data) // If we have submitted the form
         {
             $post = $this->request->data;
-            $zipname = Simulations::createSimulation($post);
+            Simulations::createSimulation($post);
             $success = true;
         }
 
@@ -37,6 +38,28 @@ class SimulationController extends \lithium\action\Controller {
 
         return compact('simulations');
 
+    }
+
+    public function zip($sim_id = null) {
+
+        if ($sim_id) {
+            $simulation = Simulations::find('first', array('conditions' => array('id' => $sim_id)));
+            $zip = Simulations::generateZip($simulation);
+
+            return $this->redirect($zip);
+        }
+    }
+
+    public function api($sim_id = null)
+    {
+        if ($sim_id) {
+
+            $simulation = Simulations::find('first', array('conditions' => array('id' => $sim_id)));
+
+            $outputs = Simulations::generateOutput($simulation);
+
+            return compact('simulation', 'outputs');
+        }
     }
 }
 
