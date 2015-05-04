@@ -65,7 +65,7 @@ use lithium\data\Connections;
  	'host' => 'localhost',
  	'login' => 'root',
  	'password' => '',
- 	'database' => 'OOMMF',
+ 	'database' => 'NMLWeb',
  	'encoding' => 'UTF-8'
  ));
 
