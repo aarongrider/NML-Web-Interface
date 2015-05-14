@@ -1,4 +1,5 @@
 *.zip
 *.idea
 app/resources/tmp
+app/libraries
 libraries
