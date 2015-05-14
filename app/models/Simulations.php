@@ -22,7 +22,7 @@ class Simulations extends \lithium\data\Model {
     {
         // ConnectorServer URL
         // TODO - Server list based on Simulation->run value
-        $url = 'http://72.233.176.25:9000';
+        $url = 'http://72.233.176.58:9000';
 
         // Post simulation to connector server
         //$job_url = $url . 'buildWithParameters/';
