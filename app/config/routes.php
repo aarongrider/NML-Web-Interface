@@ -62,7 +62,7 @@ Router::connect('/{:controller}/{:action}/{:id:[0-9a-f]{24}}/{:args}');
 Router::connect('/{:controller}/{:action}/{:args}.{:type}');
 Router::connect('/{:controller}/{:action}/{:args}');
 
-//Router::connect('/', 'Index::index');
+Router::connect('/', 'Simulation::generate');
 //Router::connect('/{:args}', array(), function($request) { header('Location: /login/url/'.str_replace('/','*',$request->url)); exit; });
 
 ?>
