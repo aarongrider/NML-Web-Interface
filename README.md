@@ -1,4 +1,4 @@
-# NML-Web-Interface
+# NML Web Interface
 
 NML Web UI is a project designed to assist researchers in Nanomagnetic Logic, an area of research 
 as replacment of traditional CMOS transistors.
@@ -13,9 +13,7 @@ using OOMMF, and returns the results.
 
 -------------------------------------------
 
-########
-WEB UI:
-########
+# Web UI
 
 This layer is built on Lithium, a PHP framework for MVC development. More info at http://li3.me/
 
@@ -26,9 +24,7 @@ Next steps for the development of this component should be adding fields to the 
 and view for results that get posted from the simulation node.
 
 
-########
-SIMULATION NODE:
-########
+# Simulation Node
 
 This is a relatively simple script that starts up a Python HTTP server and waits for a POST request from the 
 WEB UI. Once it gets a request, it reads in the data from the API and generates files. Then it runs OOMMF,
